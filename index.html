@@ -198,8 +198,8 @@
     <p class="tagline">
       Digital Game Design graduate with studio internship experience shipping a mobile puzzle game
       in Unity and building REST APIs in C# / ASP.NET Core. From grid-puzzle mechanics and isometric
-      ARPG systems to JWT-secured, Docker-ready, CI-tested backend services, I work on both sides
-      of the game.
+      ARPG systems to real-time matchmaking services load-tested with 1,000 concurrent players,
+      I work on both sides of the game.
     </p>
     <div class="cta-row">
       <a class="btn btn-primary" href="Efe_Yilmaz_Gameplay_CV.pdf" download>Gameplay CV (PDF)</a>
@@ -222,8 +222,9 @@
       <div class="track backend reveal">
         <h3>Backend</h3>
         <p>Layered ASP.NET Core architectures with EF Core and PostgreSQL: JWT authentication,
-        SignalR real-time features, Swagger-documented REST APIs, Docker Compose deployments, and
-        automated testing with xUnit / pytest on GitHub Actions CI.</p>
+        SignalR real-time features, Redis-backed matchmaking and distributed locks,
+        Swagger-documented REST APIs, Docker Compose deployments behind nginx, and automated
+        testing with xUnit / Testcontainers / pytest on GitHub Actions CI.</p>
       </div>
     </div>
   </div>
@@ -270,6 +271,18 @@
         <div class="proj-links"><a href="https://github.com/Efekoo/SE7EN" target="_blank" rel="noopener">GitHub ↗</a></div>
       </div>
       <div class="proj be reveal">
+        <h3>MatchForge</h3>
+        <div class="kind backend">Backend</div>
+        <p>Real-time matchmaking &amp; lobby service: skill-based matchmaking with expanding Elo/MMR
+        windows, JWT auth with refresh-token rotation, and SignalR lobbies with reconnect and
+        win-by-forfeit handling. Race conditions solved with Redis distributed locks; 2 load-balanced
+        replicas behind nginx with a SignalR Redis backplane. k6 load test: <strong>1,000 concurrent
+        players matched, p95 match time 2.0&nbsp;s, 0% failed requests.</strong> Testcontainers
+        integration tests on CI.</p>
+        <div class="tags"><span class="tag">ASP.NET Core</span><span class="tag">SignalR</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">nginx</span><span class="tag">k6</span><span class="tag">Docker</span></div>
+        <div class="proj-links"><a href="https://github.com/Efekoo/MatchForge" target="_blank" rel="noopener">GitHub ↗</a></div>
+      </div>
+      <div class="proj be reveal">
         <h3>Game Services API</h3>
         <div class="kind backend">Backend</div>
         <p>Four-layer ASP.NET Core solution (API / Business / Core / DataAccess) with seven domain controllers: auth, user management, currency, inventory, market economy, friends, and leaderboards. JWT + BCrypt authentication, EF Core on PostgreSQL, Swagger docs, a SignalR real-time leaderboard, Docker Compose, and 24 xUnit tests on GitHub Actions CI.</p>
@@ -310,7 +323,7 @@
       <h3>Backend</h3>
       <div class="chips">
         <span class="chip">ASP.NET Core</span><span class="chip">Entity Framework Core</span><span class="chip">REST APIs</span>
-        <span class="chip">PostgreSQL</span><span class="chip">SQL Server</span><span class="chip">SignalR</span>
+        <span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">SQL Server</span><span class="chip">SignalR</span>
         <span class="chip">JWT Auth</span><span class="chip">BCrypt</span><span class="chip">Swagger / OpenAPI</span>
         <span class="chip">AutoMapper</span><span class="chip">FluentValidation</span>
       </div>
@@ -318,8 +331,9 @@
     <div class="skill-group reveal">
       <h3>Testing &amp; DevOps</h3>
       <div class="chips">
-        <span class="chip">xUnit</span><span class="chip">pytest</span><span class="chip">Docker</span>
-        <span class="chip">Docker Compose</span><span class="chip">GitHub Actions CI</span>
+        <span class="chip">xUnit</span><span class="chip">Testcontainers</span><span class="chip">pytest</span>
+        <span class="chip">k6 Load Testing</span><span class="chip">Docker</span><span class="chip">Docker Compose</span>
+        <span class="chip">nginx</span><span class="chip">GitHub Actions CI</span>
       </div>
     </div>
     <div class="skill-group reveal">
