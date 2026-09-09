@@ -48,6 +48,15 @@
   .nav-links a{color:var(--muted);font-size:.9rem;font-weight:500}
   .nav-links a:hover{color:var(--text);text-decoration:none}
   @media(max-width:640px){.nav-links{display:none}}
+  .nav-right{display:flex;align-items:center;gap:22px}
+  .lang-switch{display:flex;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--card)}
+  .lang-switch button{
+    appearance:none;border:0;background:transparent;color:var(--muted);cursor:pointer;
+    font-family:'Inter',system-ui,sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.04em;
+    padding:7px 11px;transition:background .15s ease,color .15s ease;
+  }
+  .lang-switch button:hover{color:var(--text)}
+  .lang-switch button.active{background:var(--accent);color:#06281c}
 
   /* Hero */
   header{padding:100px 0 84px;position:relative;overflow:hidden}
@@ -180,22 +189,28 @@
 <nav>
   <div class="container nav-inner">
     <a class="logo" href="#top">Efe <span>Yılmaz</span></a>
-    <div class="nav-links">
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#experience" data-tr="Deneyim">Experience</a>
+        <a href="#projects" data-tr="Projeler">Projects</a>
+        <a href="#skills" data-tr="Yetkinlikler">Skills</a>
+        <a href="#education" data-tr="Eğitim">Education</a>
+        <a href="#certifications" data-tr="Sertifikalar">Certifications</a>
+        <a href="#contact" data-tr="İletişim">Contact</a>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language / Dil">
+        <button type="button" data-lang="en" class="active">EN</button>
+        <button type="button" data-lang="tr">TR</button>
+      </div>
     </div>
   </div>
 </nav>
 
 <header id="top">
   <div class="container">
-    <span class="eyebrow">Gameplay Programmer · Backend Developer</span>
-    <h1>Hi, I'm <span class="grad">Efe Yılmaz</span>.<br>I build games &amp; the systems behind them.</h1>
-    <p class="tagline">
+    <span class="eyebrow" data-tr="Gameplay Programcısı · Backend Developer">Gameplay Programmer · Backend Developer</span>
+    <h1 data-tr="Merhaba, ben <span class='grad'>Efe Yılmaz</span>.<br>Oyunları ve arkalarındaki sistemleri geliştiriyorum.">Hi, I'm <span class="grad">Efe Yılmaz</span>.<br>I build games &amp; the systems behind them.</h1>
+    <p class="tagline" data-tr="Dijital Oyun Tasarımı mezunuyum; stüdyo stajımda Unity ile mobil bir puzzle oyunu geliştirdim ve C# / ASP.NET Core ile REST API'ler yazdım. Grid bulmaca mekaniklerinden izometrik ARPG sistemlerine, 1.000 eşzamanlı oyuncuyla yük testi yapılmış gerçek zamanlı matchmaking servislerine kadar oyunun her iki tarafında çalışıyorum.">
       Digital Game Design graduate with studio internship experience shipping a mobile puzzle game
       in Unity and building REST APIs in C# / ASP.NET Core. From grid-puzzle mechanics and isometric
       ARPG systems to real-time matchmaking services load-tested with 1,000 concurrent players,
@@ -217,13 +232,13 @@
     <div class="tracks">
       <div class="track game reveal">
         <h3>Gameplay</h3>
-        <p>Core gameplay systems across genres: grid-based puzzles, platformer / shooter hybrids,
+        <p data-tr="Farklı türlerde temel gameplay sistemleri: grid tabanlı bulmacalar, platformer / shooter melezleri ve izometrik aksiyon-RPG'ler. Unity, C#, URP ve Input System ile oyuncu hareketi ve savaştan envanter, crafting ve görev takibine kadar.">Core gameplay systems across genres: grid-based puzzles, platformer / shooter hybrids,
         and isometric action-RPGs. Unity, C#, URP, and Input System, from player movement and combat
         to inventory, crafting, and quest tracking.</p>
       </div>
       <div class="track backend reveal">
         <h3>Backend</h3>
-        <p>Layered ASP.NET Core architectures with EF Core and PostgreSQL: JWT authentication,
+        <p data-tr="EF Core ve PostgreSQL ile katmanlı ASP.NET Core mimarileri: JWT authentication, SignalR gerçek zamanlı özellikler, Redis destekli matchmaking ve distributed lock'lar, Swagger ile dokümante edilmiş REST API'ler, nginx arkasında Docker Compose dağıtımları ve GitHub Actions CI'da xUnit / Testcontainers / pytest ile otomatik test.">Layered ASP.NET Core architectures with EF Core and PostgreSQL: JWT authentication,
         SignalR real-time features, Redis-backed matchmaking and distributed locks,
         Swagger-documented REST APIs, Docker Compose deployments behind nginx, and automated
         testing with xUnit / Testcontainers / pytest on GitHub Actions CI.</p>
@@ -234,20 +249,20 @@
 
 <section id="experience" style="background:var(--bg-soft)">
   <div class="container">
-    <h2 class="section-title reveal">Experience</h2>
-    <p class="section-sub reveal">Studio experience on both the game and the services behind it.</p>
+    <h2 class="section-title reveal" data-tr="Deneyim">Experience</h2>
+    <p class="section-sub reveal" data-tr="Hem oyun hem de arkasındaki servisler tarafında stüdyo deneyimi.">Studio experience on both the game and the services behind it.</p>
     <div class="xp-card reveal">
       <div class="xp-head">
-        <span class="xp-role">Game / Software Developer Intern</span>
-        <span class="xp-meta">Istanbul · Jun 2025 – Oct 2025</span>
+        <span class="xp-role" data-tr="Oyun / Yazılım Geliştirici Stajyeri">Game / Software Developer Intern</span>
+        <span class="xp-meta" data-tr="İstanbul · Haz 2025 – Eki 2025">Istanbul · Jun 2025 – Oct 2025</span>
       </div>
       <div class="xp-company">Asteri Game Studio · KPlus Bilişim Teknolojileri A.Ş.</div>
       <ul>
-        <li>Developed <strong>Merge Vacuum</strong>, a mobile casual puzzle game in Unity (C#, URP), implementing the core puzzle loop: drag-and-drop grid interaction, match detection, and collapse/refill logic.</li>
-        <li>Built level-objective systems including collector goals, multi-objective levels, and ice obstacles, plus boosters and tutorial hint flow.</li>
-        <li>Developed the full game-state UI flow (gameplay, victory, defeat, objective feedback) with Unity UI and TextMeshPro across a 100+ script codebase.</li>
-        <li>Modeled missing 3D props in Autodesk Maya and integrated them into the game to complete the existing 2D asset set.</li>
-        <li class="be">Developed and tested backend features for business and application workflows at KPlus using C#, ASP.NET Core, REST APIs, and SQL database operations.</li>
+        <li data-tr="Unity (C#, URP) ile mobil casual puzzle oyunu <strong>Merge Vacuum</strong>'ı geliştirdim; sürükle-bırak grid etkileşimi, eşleşme tespiti ve çökme/yeniden doldurma mantığından oluşan temel bulmaca döngüsünü uyguladım.">Developed <strong>Merge Vacuum</strong>, a mobile casual puzzle game in Unity (C#, URP), implementing the core puzzle loop: drag-and-drop grid interaction, match detection, and collapse/refill logic.</li>
+        <li data-tr="Toplayıcı hedefler, çok hedefli seviyeler ve buz engelleri dahil seviye hedef sistemlerini, ayrıca booster'ları ve öğretici ipucu akışını geliştirdim.">Built level-objective systems including collector goals, multi-objective levels, and ice obstacles, plus boosters and tutorial hint flow.</li>
+        <li data-tr="Unity UI ve TextMeshPro ile oyun durumu arayüz akışının tamamını (oynanış, zafer, yenilgi, hedef geri bildirimi) 100+ script'lik kod tabanında geliştirdim.">Developed the full game-state UI flow (gameplay, victory, defeat, objective feedback) with Unity UI and TextMeshPro across a 100+ script codebase.</li>
+        <li data-tr="Eksik 3D prop'ları Autodesk Maya'da modelleyip oyuna entegre ederek mevcut 2D varlık setini tamamladım.">Modeled missing 3D props in Autodesk Maya and integrated them into the game to complete the existing 2D asset set.</li>
+        <li class="be" data-tr="KPlus'ta C#, ASP.NET Core, REST API ve SQL veritabanı işlemleriyle iş ve uygulama akışlarına yönelik backend özellikleri geliştirip test ettim.">Developed and tested backend features for business and application workflows at KPlus using C#, ASP.NET Core, REST APIs, and SQL database operations.</li>
       </ul>
     </div>
   </div>
@@ -255,27 +270,27 @@
 
 <section id="projects">
   <div class="container">
-    <h2 class="section-title reveal">Projects</h2>
-    <p class="section-sub reveal">Selected work in gameplay systems, game backends, and applied AI.</p>
+    <h2 class="section-title reveal" data-tr="Projeler">Projects</h2>
+    <p class="section-sub reveal" data-tr="Gameplay sistemleri, oyun backend'leri ve uygulamalı yapay zekâdan seçme işler.">Selected work in gameplay systems, game backends, and applied AI.</p>
     <div class="grid">
       <div class="proj reveal">
         <h3>Apollo</h3>
         <div class="kind game">Gameplay</div>
-        <p>Hybrid 2D platformer / space shooter with planet selection, mission phases, resource collection, and ship-upgrade progression. Global game-state and scene-transition systems, player movement, enemy spawning, and upgrade mechanics across a 100+ script codebase.</p>
+        <p data-tr="Gezegen seçimi, görev aşamaları, kaynak toplama ve gemi yükseltme ilerleyişi içeren hibrit 2D platformer / uzay shooter. 100+ script'lik kod tabanında global oyun durumu ve sahne geçiş sistemleri, oyuncu hareketi, düşman spawn'ı ve yükseltme mekanikleri.">Hybrid 2D platformer / space shooter with planet selection, mission phases, resource collection, and ship-upgrade progression. Global game-state and scene-transition systems, player movement, enemy spawning, and upgrade mechanics across a 100+ script codebase.</p>
         <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">URP</span><span class="tag">Input System</span></div>
         <div class="proj-links"><a href="https://github.com/Efekoo/APOLLO" target="_blank" rel="noopener">GitHub ↗</a></div>
       </div>
       <div class="proj reveal">
         <h3>Seven Layers of Carnage</h3>
         <div class="kind game">Gameplay</div>
-        <p>2D isometric action-RPG inspired by Dante's Inferno, with layered level progression and boss encounters. Inventory, hotbar, loot, crafting, shop, and quest-tracking systems along with the core combat and progression flow.</p>
+        <p data-tr="Dante'nin Cehennem'inden esinlenen, katmanlı seviye ilerleyişi ve boss karşılaşmaları içeren 2D izometrik aksiyon-RPG. Temel savaş ve ilerleme akışının yanı sıra envanter, hotbar, loot, crafting, dükkân ve görev takip sistemleri.">2D isometric action-RPG inspired by Dante's Inferno, with layered level progression and boss encounters. Inventory, hotbar, loot, crafting, shop, and quest-tracking systems along with the core combat and progression flow.</p>
         <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">URP</span><span class="tag">Input System</span></div>
         <div class="proj-links"><a href="https://github.com/Efekoo/SE7EN" target="_blank" rel="noopener">GitHub ↗</a></div>
       </div>
       <div class="proj be reveal">
         <h3>MatchForge</h3>
         <div class="kind backend">Backend</div>
-        <p>Real-time matchmaking &amp; lobby service: skill-based matchmaking with expanding Elo/MMR
+        <p data-tr="Gerçek zamanlı matchmaking &amp; lobi servisi: genişleyen Elo/MMR aralıklarıyla skill-based matchmaking, refresh token rotasyonlu JWT authentication ve yeniden bağlanma ile hükmen galibiyet desteği olan SignalR lobileri. Race condition'lar Redis distributed lock ile çözüldü; nginx arkasında 2 load-balanced replika ve SignalR Redis backplane. k6 yük testi: <strong>1.000 eşzamanlı oyuncu eşleştirildi, p95 eşleşme süresi 2,0&nbsp;sn, %0 hatalı istek.</strong> CI'da Testcontainers entegrasyon testleri.">Real-time matchmaking &amp; lobby service: skill-based matchmaking with expanding Elo/MMR
         windows, JWT auth with refresh-token rotation, and SignalR lobbies with reconnect and
         win-by-forfeit handling. Race conditions solved with Redis distributed locks; 2 load-balanced
         replicas behind nginx with a SignalR Redis backplane. k6 load test: <strong>1,000 concurrent
@@ -287,21 +302,21 @@
       <div class="proj be reveal">
         <h3>Game Services API</h3>
         <div class="kind backend">Backend</div>
-        <p>Four-layer ASP.NET Core solution (API / Business / Core / DataAccess) with seven domain controllers: auth, user management, currency, inventory, market economy, friends, and leaderboards. JWT + BCrypt authentication, EF Core on PostgreSQL, Swagger docs, a SignalR real-time leaderboard, Docker Compose, and 24 xUnit tests on GitHub Actions CI.</p>
+        <p data-tr="Yedi domain controller içeren dört katmanlı ASP.NET Core çözümü (API / Business / Core / DataAccess): authentication, kullanıcı yönetimi, para birimi, envanter, market ekonomisi, arkadaşlar ve liderlik tablosu. JWT + BCrypt authentication, PostgreSQL üzerinde EF Core, Swagger dokümantasyonu, SignalR gerçek zamanlı liderlik tablosu, Docker Compose ve GitHub Actions CI'da 24 xUnit testi.">Four-layer ASP.NET Core solution (API / Business / Core / DataAccess) with seven domain controllers: auth, user management, currency, inventory, market economy, friends, and leaderboards. JWT + BCrypt authentication, EF Core on PostgreSQL, Swagger docs, a SignalR real-time leaderboard, Docker Compose, and 24 xUnit tests on GitHub Actions CI.</p>
         <div class="tags"><span class="tag">ASP.NET Core</span><span class="tag">EF Core</span><span class="tag">PostgreSQL</span><span class="tag">SignalR</span><span class="tag">Docker</span><span class="tag">xUnit</span></div>
-        <div class="proj-links"><a href="https://github.com/Efekoo/Game_Services_API" target="_blank" rel="noopener">GitHub ↗</a><a href="https://gameservices-api.onrender.com/demo" target="_blank" rel="noopener">Live Demo ↗</a></div>
+        <div class="proj-links"><a href="https://github.com/Efekoo/Game_Services_API" target="_blank" rel="noopener">GitHub ↗</a><a href="https://gameservices-api.onrender.com/demo" target="_blank" rel="noopener" data-tr="Canlı Demo ↗">Live Demo ↗</a></div>
       </div>
       <div class="proj be reveal">
         <h3>Investor: Algorithmic Trading Bot</h3>
         <div class="kind backend">Backend / Python</div>
-        <p>Modular trading bot: exchange abstraction over ccxt, eight pluggable strategies, and a risk module (position sizing, stop-loss / trailing stop, daily circuit breaker). Backtest engine simulating fees, slippage, and partial fills with Optuna optimization; layered live-trading safety model with kill switch. 19 pytest tests in CI.</p>
+        <p data-tr="Modüler trading bot: ccxt üzerine exchange soyutlaması, sekiz takılabilir strateji ve risk modülü (pozisyon büyüklüğü, stop-loss / trailing stop, günlük devre kesici). Komisyon, slippage ve kısmi dolumları simüle eden, Optuna ile optimize edilen backtest motoru; kill switch içeren katmanlı canlı işlem güvenlik modeli. CI'da 19 pytest testi.">Modular trading bot: exchange abstraction over ccxt, eight pluggable strategies, and a risk module (position sizing, stop-loss / trailing stop, daily circuit breaker). Backtest engine simulating fees, slippage, and partial fills with Optuna optimization; layered live-trading safety model with kill switch. 19 pytest tests in CI.</p>
         <div class="tags"><span class="tag">Python</span><span class="tag">ccxt</span><span class="tag">pandas</span><span class="tag">Optuna</span><span class="tag">Docker</span><span class="tag">pytest</span></div>
         <div class="proj-links"><a href="https://github.com/Efekoo/Investor" target="_blank" rel="noopener">GitHub ↗</a></div>
       </div>
       <div class="proj reveal">
         <h3>AeroRecover</h3>
-        <div class="kind backend">AI / Python</div>
-        <p>Multi-agent AI application generating post-flight recovery plans for pilots from flight duration, timezone shift, layover time, and location data. Six specialized agents orchestrated in a LangGraph workflow with a safety-guardrail agent; delivered as a Streamlit app with Folium map visualizations.</p>
+        <div class="kind backend" data-tr="Yapay Zekâ / Python">AI / Python</div>
+        <p data-tr="Uçuş süresi, saat dilimi farkı, mola süresi ve konum verisinden pilotlar için uçuş sonrası toparlanma planı üreten çok ajanlı yapay zekâ uygulaması. LangGraph iş akışında orkestre edilen altı uzman ajan ve bir güvenlik filtresi ajanı; Folium harita görselleştirmeleriyle Streamlit uygulaması olarak sunuldu.">Multi-agent AI application generating post-flight recovery plans for pilots from flight duration, timezone shift, layover time, and location data. Six specialized agents orchestrated in a LangGraph workflow with a safety-guardrail agent; delivered as a Streamlit app with Folium map visualizations.</p>
         <div class="tags"><span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">Gemini</span><span class="tag">Streamlit</span><span class="tag">Folium</span></div>
         <div class="proj-links"><a href="https://github.com/Efekoo/AeroRecover" target="_blank" rel="noopener">GitHub ↗</a></div>
       </div>
@@ -311,50 +326,50 @@
 
 <section id="skills" style="background:var(--bg-soft)">
   <div class="container">
-    <h2 class="section-title reveal">Technical Skills</h2>
-    <p class="section-sub reveal">The tools I use to design, build, ship, and run.</p>
+    <h2 class="section-title reveal" data-tr="Teknik Yetkinlikler">Technical Skills</h2>
+    <p class="section-sub reveal" data-tr="Tasarlarken, geliştirirken, yayınlarken ve işletirken kullandığım araçlar.">The tools I use to design, build, ship, and run.</p>
     <div class="skill-group reveal">
-      <h3>Game Development</h3>
+      <h3 data-tr="Oyun Geliştirme">Game Development</h3>
       <div class="chips">
         <span class="chip">Unity</span><span class="chip">C#</span><span class="chip">Universal Render Pipeline</span>
         <span class="chip">Unity Input System</span><span class="chip">Unity UI</span>
-        <span class="chip">Grid Puzzles</span><span class="chip">Platformers</span><span class="chip">Isometric ARPG</span>
+        <span class="chip" data-tr="Grid Bulmacalar">Grid Puzzles</span><span class="chip" data-tr="Platformer">Platformers</span><span class="chip" data-tr="İzometrik ARPG">Isometric ARPG</span>
       </div>
     </div>
     <div class="skill-group reveal">
       <h3>Backend</h3>
       <div class="chips">
-        <span class="chip">ASP.NET Core</span><span class="chip">Entity Framework Core</span><span class="chip">REST APIs</span>
+        <span class="chip">ASP.NET Core</span><span class="chip">Entity Framework Core</span><span class="chip" data-tr="REST API">REST APIs</span>
         <span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">SQL Server</span><span class="chip">SignalR</span>
         <span class="chip">JWT Auth</span><span class="chip">BCrypt</span><span class="chip">Swagger / OpenAPI</span>
         <span class="chip">AutoMapper</span><span class="chip">FluentValidation</span>
       </div>
     </div>
     <div class="skill-group reveal">
-      <h3>Testing &amp; DevOps</h3>
+      <h3 data-tr="Test &amp; DevOps">Testing &amp; DevOps</h3>
       <div class="chips">
         <span class="chip">xUnit</span><span class="chip">Testcontainers</span><span class="chip">pytest</span>
-        <span class="chip">k6 Load Testing</span><span class="chip">Docker</span><span class="chip">Docker Compose</span>
+        <span class="chip" data-tr="k6 Yük Testi">k6 Load Testing</span><span class="chip">Docker</span><span class="chip">Docker Compose</span>
         <span class="chip">nginx</span><span class="chip">GitHub Actions CI</span>
       </div>
     </div>
     <div class="skill-group reveal">
-      <h3>Python &amp; AI</h3>
+      <h3 data-tr="Python &amp; Yapay Zekâ">Python &amp; AI</h3>
       <div class="chips">
         <span class="chip">Python</span><span class="chip">pandas</span><span class="chip">ccxt</span><span class="chip">Optuna</span>
         <span class="chip">LangGraph</span><span class="chip">Google Gemini API</span><span class="chip">Streamlit</span>
       </div>
     </div>
     <div class="skill-group reveal">
-      <h3>Tools</h3>
+      <h3 data-tr="Araçlar">Tools</h3>
       <div class="chips">
-        <span class="chip">Git</span><span class="chip">Autodesk Maya (3D asset modeling)</span>
+        <span class="chip">Git</span><span class="chip" data-tr="Autodesk Maya (3D varlık modelleme)">Autodesk Maya (3D asset modeling)</span>
       </div>
     </div>
     <div class="skill-group reveal">
-      <h3>Languages</h3>
+      <h3 data-tr="Diller">Languages</h3>
       <div class="chips">
-        <span class="chip">Turkish (Native)</span><span class="chip">English (B2)</span>
+        <span class="chip" data-tr="Türkçe (Ana dil)">Turkish (Native)</span><span class="chip" data-tr="İngilizce (B2)">English (B2)</span>
       </div>
     </div>
   </div>
@@ -362,44 +377,44 @@
 
 <section id="education">
   <div class="container">
-    <h2 class="section-title reveal">Education</h2>
+    <h2 class="section-title reveal" data-tr="Eğitim">Education</h2>
     <div class="edu reveal" style="margin-bottom:16px">
       <div>
-        <strong>Dokuz Eylül University</strong><br>
-        <span class="muted">M.Sc. Management Information Systems · Non-Thesis, Distance Education</span>
+        <strong data-tr="Dokuz Eylül Üniversitesi">Dokuz Eylül University</strong><br>
+        <span class="muted" data-tr="Yönetim Bilişim Sistemleri Tezsiz Yüksek Lisans · Uzaktan Öğretim">M.Sc. Management Information Systems · Non-Thesis, Distance Education</span>
       </div>
-      <div class="muted">Online · 2026 – 2027 (Expected)</div>
+      <div class="muted" data-tr="Online · 2026 – 2027 (Beklenen)">Online · 2026 – 2027 (Expected)</div>
     </div>
     <div class="edu reveal">
       <div>
-        <strong>Istinye University</strong><br>
-        <span class="muted">B.A. Digital Game Design · GPA 3.21 / 4.00</span>
+        <strong data-tr="İstinye Üniversitesi">Istinye University</strong><br>
+        <span class="muted" data-tr="Lisans, Dijital Oyun Tasarımı · GNO 3,21 / 4,00">B.A. Digital Game Design · GPA 3.21 / 4.00</span>
       </div>
-      <div class="muted">Istanbul · 2022 – 2026</div>
+      <div class="muted" data-tr="İstanbul · 2022 – 2026">Istanbul · 2022 – 2026</div>
     </div>
   </div>
 </section>
 
 <section id="certifications" style="background:var(--bg-soft)">
   <div class="container">
-    <h2 class="section-title reveal">Certifications</h2>
+    <h2 class="section-title reveal" data-tr="Sertifikalar">Certifications</h2>
     <div class="cert-grid">
       <div class="cert reveal">
         <h3>Foundational C# with Microsoft</h3>
         <div class="issuer">freeCodeCamp · Microsoft</div>
-        <div class="date">Issued Jul 2026</div>
-        <div class="cred">Credential ID: efe_yilmaz-fcswm</div>
-        <div class="cred" style="margin-top:6px"><a href="https://www.freecodecamp.org/certification/efe_yilmaz/foundational-c-sharp-with-microsoft" target="_blank" rel="noopener">Verify ↗</a></div>
+        <div class="date" data-tr="Veriliş: Tem 2026">Issued Jul 2026</div>
+        <div class="cred" data-tr="Sertifika No: efe_yilmaz-fcswm">Credential ID: efe_yilmaz-fcswm</div>
+        <div class="cred" style="margin-top:6px"><a href="https://www.freecodecamp.org/certification/efe_yilmaz/foundational-c-sharp-with-microsoft" target="_blank" rel="noopener" data-tr="Doğrula ↗">Verify ↗</a></div>
       </div>
       <div class="cert reveal">
         <h3>C# Intermediate</h3>
         <div class="issuer">Sololearn</div>
-        <div class="date">Issued Jan 2025</div>
+        <div class="date" data-tr="Veriliş: Oca 2025">Issued Jan 2025</div>
       </div>
       <div class="cert reveal">
         <h3>Python Intermediate</h3>
         <div class="issuer">Sololearn</div>
-        <div class="date">Issued Jan 2025</div>
+        <div class="date" data-tr="Veriliş: Oca 2025">Issued Jan 2025</div>
       </div>
     </div>
   </div>
@@ -408,7 +423,7 @@
 <section id="contact">
   <div class="container">
     <div class="contact-box reveal">
-      <h2>Get in touch</h2>
+      <h2 data-tr="İletişime geç">Get in touch</h2>
       <div class="contact-links">
         <a class="btn btn-primary" href="mailto:efeylmz2612@gmail.com">efeylmz2612@gmail.com</a>
         <a class="btn btn-ghost" href="https://github.com/Efekoo" target="_blank" rel="noopener">GitHub</a>
@@ -419,7 +434,7 @@
 </section>
 
 <footer>
-  © 2026 Efe Yılmaz · Istanbul, Türkiye
+  <span data-tr="© 2026 Efe Yılmaz · İstanbul, Türkiye">© 2026 Efe Yılmaz · Istanbul, Türkiye</span>
 </footer>
 
 <script>
@@ -427,6 +442,34 @@
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
   },{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Language toggle (EN / TR)
+  (function(){
+    const nodes = Array.prototype.slice.call(document.querySelectorAll('[data-tr]'));
+    nodes.forEach(function(n){ n.setAttribute('data-en', n.innerHTML); });
+    const titles = {
+      en: 'Efe Yılmaz | Gameplay & Backend Developer',
+      tr: 'Efe Yılmaz | Gameplay & Backend Geliştirici'
+    };
+    const descs = {
+      en: 'Efe Yılmaz, gameplay programmer and backend developer. Unity, C#, ASP.NET Core. Online CV & portfolio.',
+      tr: 'Efe Yılmaz, gameplay programcısı ve backend developer. Unity, C#, ASP.NET Core. Online CV ve portfolyo.'
+    };
+    const meta = document.querySelector('meta[name="description"]');
+    const btns = Array.prototype.slice.call(document.querySelectorAll('.lang-switch button'));
+    function setLang(lang){
+      document.documentElement.lang = lang;
+      nodes.forEach(function(n){
+        n.innerHTML = n.getAttribute(lang === 'tr' ? 'data-tr' : 'data-en');
+      });
+      document.title = titles[lang];
+      if (meta) meta.setAttribute('content', descs[lang]);
+      btns.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang') === lang); });
+    }
+    btns.forEach(function(b){
+      b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); });
+    });
+  })();
 </script>
 
 </body>
