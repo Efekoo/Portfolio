@@ -295,8 +295,8 @@
     <div class="cross" aria-hidden="true"><span>×</span></div>
     <div class="side">
       <h3>Backend</h3>
-      <div class="stack">ASP.NET Core · PostgreSQL · SignalR · Redis</div>
-      <p data-tr="EF Core ve PostgreSQL ile katmanlı ASP.NET Core mimarileri: JWT authentication, SignalR gerçek zamanlı özellikler, Redis destekli matchmaking, Swagger ile dokümante edilmiş REST API'ler, nginx arkasında Docker Compose ve GitHub Actions CI'da otomatik testler.">Layered ASP.NET Core architectures with EF Core and PostgreSQL: JWT authentication, SignalR real-time features, Redis-backed matchmaking, Swagger-documented REST APIs, Docker Compose behind nginx and automated tests on GitHub Actions CI.</p>
+      <div class="stack">ASP.NET Core · PostgreSQL · SignalR · Redis · RabbitMQ</div>
+      <p data-tr="EF Core ve PostgreSQL ile katmanlı ASP.NET Core mimarileri: JWT authentication, SignalR gerçek zamanlı özellikler, Redis destekli matchmaking, RabbitMQ ile olay güdümlü servisler, Swagger ile dokümante edilmiş REST API'ler, nginx arkasında Docker Compose ve GitHub Actions CI'da otomatik testler.">Layered ASP.NET Core architectures with EF Core and PostgreSQL: JWT authentication, SignalR real-time features, Redis-backed matchmaking, event-driven services with RabbitMQ, Swagger-documented REST APIs, Docker Compose behind nginx and automated tests on GitHub Actions CI.</p>
     </div>
   </div>
 </section>
@@ -333,10 +333,10 @@
 
     <div class="list">
       <article class="row" data-kind="backend">
-        <div><h3>MatchForge</h3><div class="kind" data-tr="Backend, gerçek zamanlı">Backend, real-time</div></div>
+        <div><h3>MatchForge</h3><div class="kind" data-tr="Backend, gerçek zamanlı, olay güdümlü">Backend, real-time, event-driven</div></div>
         <div>
-          <p data-tr="Gerçek zamanlı matchmaking ve lobi servisi: genişleyen Elo/MMR aralıklarıyla skill-based eşleştirme, refresh token rotasyonlu JWT ve yeniden bağlanma ile hükmen galibiyet destekli SignalR lobileri. Race condition'lar Redis distributed lock ile çözüldü; nginx arkasında 2 replika ve SignalR Redis backplane. k6 yük testi: <strong>1.000 eşzamanlı oyuncu, p95 eşleşme süresi 2,0&nbsp;sn, %0 hata.</strong>">Real-time matchmaking and lobby service: skill-based matching with expanding Elo/MMR windows, JWT with refresh-token rotation, and SignalR lobbies with reconnect and win-by-forfeit. Race conditions solved with Redis distributed locks; 2 replicas behind nginx with a SignalR Redis backplane. k6 load test: <strong>1,000 concurrent players, p95 match time 2.0&nbsp;s, 0% failed requests.</strong></p>
-          <div class="tags"><span>ASP.NET Core</span><span>SignalR</span><span>Redis</span><span>PostgreSQL</span><span>nginx</span><span>k6</span><span>Docker</span></div>
+          <p data-tr="Gerçek zamanlı matchmaking ve lobi servisi: genişleyen Elo/MMR aralıklarıyla skill-based eşleştirme, refresh token rotasyonlu JWT ve yeniden bağlanma ile hükmen galibiyet destekli SignalR lobileri. Race condition'lar Redis distributed lock ile çözüldü; nginx arkasında 2 replika ve SignalR Redis backplane. k6 yük testi: <strong>1.000 eşzamanlı oyuncu, p95 eşleşme süresi 2,0&nbsp;sn, %0 hata.</strong> Maç olayları transactional outbox ile RabbitMQ'ya yayınlanıyor; ayrı bir istatistik servisi bunları inbox ile idempotent şekilde tüketip liderlik tablosunu güncelliyor (retry ve dead-letter kuyruklarıyla).">Real-time matchmaking and lobby service: skill-based matching with expanding Elo/MMR windows, JWT with refresh-token rotation, and SignalR lobbies with reconnect and win-by-forfeit. Race conditions solved with Redis distributed locks; 2 replicas behind nginx with a SignalR Redis backplane. k6 load test: <strong>1,000 concurrent players, p95 match time 2.0&nbsp;s, 0% failed requests.</strong> Match events flow to RabbitMQ through a transactional outbox, and a separate stats service consumes them idempotently via an inbox to maintain a leaderboard, with retries and dead-letter queues.</p>
+          <div class="tags"><span>ASP.NET Core</span><span>SignalR</span><span>Redis</span><span>RabbitMQ</span><span>MassTransit</span><span>PostgreSQL</span><span>nginx</span><span>k6</span><span>Docker</span></div>
           <div class="links"><a href="https://github.com/Efekoo/MatchForge" target="_blank" rel="noopener">GitHub</a></div>
         </div>
       </article>
@@ -420,7 +420,7 @@
     </div>
     <dl class="skills">
       <div class="skill"><dt data-tr="Oyun geliştirme">Game development</dt><dd>Unity, C#, URP, Input System, Unity UI, TextMeshPro, Shaders</dd></div>
-      <div class="skill"><dt>Backend</dt><dd>ASP.NET Core, EF Core, REST APIs, SignalR, JWT, BCrypt, AutoMapper, FluentValidation, Swagger</dd></div>
+      <div class="skill"><dt>Backend</dt><dd>ASP.NET Core, EF Core, REST APIs, SignalR, RabbitMQ, MassTransit, JWT, BCrypt, AutoMapper, FluentValidation, Swagger</dd></div>
       <div class="skill"><dt data-tr="Veri">Data</dt><dd>PostgreSQL, SQL Server, Redis</dd></div>
       <div class="skill"><dt data-tr="Test ve DevOps">Testing &amp; DevOps</dt><dd>xUnit, Testcontainers, pytest, k6, Docker, Docker Compose, nginx, GitHub Actions</dd></div>
       <div class="skill"><dt data-tr="Python ve yapay zekâ">Python &amp; AI</dt><dd>Python, pandas, ccxt, Optuna, LangGraph, Gemini API, Streamlit</dd></div>
