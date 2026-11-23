@@ -85,6 +85,7 @@ backend_en = page("en", [
      project("DevIt — Developer Team-Finding Platform", f"ASP.NET Core 9, EF Core, PostgreSQL, SignalR · {GPLAY} · {DEVIT_SITE}", [
          "Backend developer in a two-person team: four-layer ASP.NET Core 9 API with 10 controllers and 5 SignalR hubs (chat, notifications, admin) serving the Flutter app, web client, and admin panel.",
          "Production auth &amp; safety: JWT refresh-token rotation with reuse detection, Google OAuth, email verification, hashed reset codes with brute-force lockout, rate limiting, blocking, and account deletion.",
+         "Deploy and operate production myself on an Ubuntu Server: nginx reverse proxy and web hosting, PostgreSQL, server-side EF Core migrations, and secrets kept only in server environment files.",
      ]) +
      project("MatchForge — Real-Time Matchmaking &amp; Lobby Service", f"ASP.NET Core, SignalR, Redis, PostgreSQL, RabbitMQ, nginx, k6, Docker, xUnit · {MF}", [
          "Built a real-time matchmaking &amp; lobby service closing the full player loop: JWT auth with refresh-token rotation, skill-based matchmaking with expanding Elo/MMR windows, SignalR lobbies, and hand-rolled Elo rating persisted to PostgreSQL.",
@@ -97,15 +98,13 @@ backend_en = page("en", [
          "Built a SignalR real-time leaderboard broadcasting live standings; containerized with Docker Compose and covered by 24 xUnit tests on a GitHub Actions CI pipeline.",
      ]) +
      project("Investor — Algorithmic Trading Bot", 'Python, ccxt, pandas, SQLite, Optuna, Docker, pytest · <a href="https://github.com/Efekoo/Investor">github.com/Efekoo/Investor</a>', [
-         "Built a modular trading bot: exchange abstraction over ccxt, eight pluggable strategies, and a risk module covering position sizing, stop-loss / trailing stop, and a daily circuit breaker.",
-         "Developed a backtest engine simulating fees, slippage, and partial fills with Optuna optimization; designed a layered live-trading safety model (paper / live modes, kill switch); 19 pytest tests in GitHub Actions CI.",
+         "Modular trading bot with eight pluggable strategies, a risk module (position sizing, trailing stop, daily circuit breaker), a backtest engine simulating fees and slippage with Optuna optimization, and 19 pytest tests in CI.",
      ])),
     ("Technical Skills", skills([
         ("Backend", "C#, ASP.NET Core, Entity Framework Core, REST APIs, PostgreSQL, Redis, SQL Server, SignalR, RabbitMQ / MassTransit, JWT Authentication, BCrypt, Swagger / OpenAPI, AutoMapper, FluentValidation"),
-        ("Testing &amp; DevOps", "xUnit, Testcontainers, pytest, k6 Load Testing, Docker, Docker Compose, nginx, GitHub Actions CI"),
+        ("Testing, DevOps &amp; Tools", "xUnit, Testcontainers, pytest, k6 Load Testing, Docker, Docker Compose, nginx, Linux (Ubuntu Server), GitHub Actions CI, Git"),
         ("Python", "pandas, ccxt, Optuna, LangGraph, Google Gemini API, Streamlit"),
         ("Game Development", "Unity, C#, Universal Render Pipeline"),
-        ("Tools", "Git"),
     ])),
     ("Languages &amp; Certifications",
      "<p>Turkish (Native) · English (B2)</p><p><b>Foundational C# with Microsoft</b> — freeCodeCamp (Jul 2026) · <b>C# &amp; Python Intermediate</b> — Sololearn (Jan 2025)</p>"),
@@ -130,6 +129,7 @@ backend_tr = page("tr", [
      project("DevIt — Yazılımcı Ekip Bulma Platformu", f"ASP.NET Core 9, EF Core, PostgreSQL, SignalR · {GPLAY} · {DEVIT_SITE}", [
          "İki kişilik ekipte backend geliştiricisi: Flutter uygulamasına, web istemcisine ve admin paneline hizmet veren, 10 controller ve 5 SignalR hub'ı (sohbet, bildirim, admin) içeren dört katmanlı ASP.NET Core 9 API.",
          "Production seviyesinde auth ve güvenlik: yeniden kullanım tespitli JWT refresh token rotasyonu, Google OAuth, e-posta doğrulama, brute-force kilitli hash'lenmiş sıfırlama kodları, rate limiting, engelleme ve hesap silme.",
+         "Production ortamını Ubuntu Server üzerinde kendim kurup işletiyorum: nginx reverse proxy ve web yayını, PostgreSQL, sunucuda EF Core migration'ları ve yalnızca sunucu ortam dosyalarında tutulan gizli anahtarlar.",
      ]) +
      project("MatchForge — Gerçek Zamanlı Matchmaking &amp; Lobi Servisi", f"ASP.NET Core, SignalR, Redis, PostgreSQL, RabbitMQ, nginx, k6, Docker, xUnit · {MF}", [
          "Oyuncu döngüsünü uçtan uca kapatan matchmaking ve lobi servisi: refresh token rotasyonlu JWT authentication, genişleyen Elo/MMR aralıklarıyla skill-based matchmaking, SignalR lobileri ve PostgreSQL'de saklanan Elo puanı.",
@@ -142,15 +142,13 @@ backend_tr = page("tr", [
          "Canlı sıralamayı yayınlayan SignalR gerçek zamanlı liderlik tablosu geliştirdim; Docker Compose ile container'laştırdım ve GitHub Actions CI'da 24 xUnit testiyle kapsadım.",
      ]) +
      project("Investor — Algoritmik Alım-Satım Botu", 'Python, ccxt, pandas, SQLite, Optuna, Docker, pytest · <a href="https://github.com/Efekoo/Investor">github.com/Efekoo/Investor</a>', [
-         "Modüler bir trading bot geliştirdim: ccxt üzerine exchange soyutlaması, sekiz takılabilir strateji ve pozisyon büyüklüğü, stop-loss / trailing stop ile günlük devre kesiciyi kapsayan risk modülü.",
-         "Komisyon, slippage ve kısmi dolumları simüle eden, Optuna ile optimize edilen bir backtest motoru geliştirdim; katmanlı canlı işlem güvenlik modeli (paper / live mod, kill switch) tasarladım; GitHub Actions CI'da 19 pytest testi.",
+         "Sekiz takılabilir strateji, risk modülü (pozisyon büyüklüğü, trailing stop, günlük devre kesici), komisyon ve slippage simüle eden Optuna optimizasyonlu backtest motoru ve CI'da 19 pytest testi içeren modüler trading bot.",
      ])),
     ("Teknik Yetkinlikler", skills([
         ("Backend", "C#, ASP.NET Core, Entity Framework Core, REST API, PostgreSQL, Redis, SQL Server, SignalR, RabbitMQ / MassTransit, JWT Authentication, BCrypt, Swagger / OpenAPI, AutoMapper, FluentValidation"),
-        ("Test &amp; DevOps", "xUnit, Testcontainers, pytest, k6 yük testi, Docker, Docker Compose, nginx, GitHub Actions CI"),
+        ("Test, DevOps &amp; Araçlar", "xUnit, Testcontainers, pytest, k6 yük testi, Docker, Docker Compose, nginx, Linux (Ubuntu Server), GitHub Actions CI, Git"),
         ("Python", "pandas, ccxt, Optuna, LangGraph, Google Gemini API, Streamlit"),
         ("Oyun Geliştirme", "Unity, C#, Universal Render Pipeline"),
-        ("Araçlar", "Git"),
     ])),
     ("Diller &amp; Sertifikalar",
      "<p>Türkçe (Ana dil) · İngilizce (B2)</p><p><b>Foundational C# with Microsoft</b> — freeCodeCamp (Tem 2026) · <b>C# &amp; Python Intermediate</b> — Sololearn (Oca 2025)</p>"),
@@ -193,13 +191,13 @@ gameplay_en = page("en", [
          "Backend API for game systems (authentication, player progression, inventory, market economy, friends, and leaderboards) with a SignalR real-time leaderboard, Docker Compose setup, and a CI-tested codebase (24 xUnit tests); directly applicable to live-service game backends.",
      ]) +
      project("DevIt — Developer Team-Finding Platform", f"ASP.NET Core 9, PostgreSQL, SignalR · {GPLAY} · {DEVIT_SITE}", [
-         "Backend developer in a two-person team for an app <b>live on Google Play</b>: four-layer ASP.NET Core 9 API with real-time SignalR chat and notifications, JWT / Google OAuth authentication, and production hardening.",
+         "Backend developer in a two-person team for an app <b>live on Google Play</b>: four-layer ASP.NET Core 9 API with real-time SignalR chat and notifications, JWT / Google OAuth authentication, and production hardening; I deploy and run it on an Ubuntu Server behind nginx.",
      ])),
     ("Technical Skills", skills([
         ("Game Development", "Unity, C#, Universal Render Pipeline, Unity Input System, Unity UI, 2D gameplay systems (grid puzzles, platformers, isometric ARPG)"),
         ("Backend for Games", "ASP.NET Core, Entity Framework Core, REST APIs, PostgreSQL, Redis, SignalR, RabbitMQ, JWT Authentication, Docker"),
         ("AI &amp; Scripting", "Python, LangGraph, Google Gemini API"),
-        ("Tools", "Git, Autodesk Maya (3D asset modeling)"),
+        ("Tools", "Git, Linux (Ubuntu Server), Autodesk Maya (3D asset modeling)"),
     ])),
     ("Languages &amp; Certifications",
      "<p>Turkish (Native) · English (B2)</p><p><b>Foundational C# with Microsoft</b> — freeCodeCamp (Jul 2026) · <b>C# &amp; Python Intermediate</b> — Sololearn (Jan 2025)</p>"),
@@ -239,13 +237,13 @@ gameplay_tr = page("tr", [
          "Oyun sistemleri (authentication, oyuncu ilerleyişi, envanter, market ekonomisi, arkadaşlar, liderlik tablosu) için backend API; SignalR gerçek zamanlı liderlik tablosu, Docker Compose kurulumu ve CI'da test edilen kod tabanıyla (24 xUnit testi) canlı servis oyun backend'lerine doğrudan uygulanabilir.",
      ]) +
      project("DevIt — Yazılımcı Ekip Bulma Platformu", f"ASP.NET Core 9, PostgreSQL, SignalR · {GPLAY} · {DEVIT_SITE}", [
-         "İki kişilik ekipte <b>Google Play'de yayındaki</b> uygulamanın backend geliştiricisi: SignalR ile gerçek zamanlı sohbet ve bildirimler, JWT / Google OAuth ve production güvenlik önlemleri içeren ASP.NET Core 9 API.",
+         "İki kişilik ekipte <b>Google Play'de yayındaki</b> uygulamanın backend geliştiricisi: SignalR ile gerçek zamanlı sohbet ve bildirimler, JWT / Google OAuth ve production güvenlik önlemleri içeren ASP.NET Core 9 API; Ubuntu Server üzerinde nginx arkasında kendim yayınlayıp işletiyorum.",
      ])),
     ("Teknik Yetkinlikler", skills([
         ("Oyun Geliştirme", "Unity, C#, Universal Render Pipeline, Unity Input System, Unity UI, 2D gameplay sistemleri (grid bulmacalar, platformer, izometrik ARPG)"),
         ("Oyunlar İçin Backend", "ASP.NET Core, Entity Framework Core, REST API, PostgreSQL, Redis, SignalR, RabbitMQ, JWT Authentication, Docker"),
         ("Yapay Zekâ &amp; Scripting", "Python, LangGraph, Google Gemini API"),
-        ("Araçlar", "Git, Autodesk Maya (3D varlık modelleme)"),
+        ("Araçlar", "Git, Linux (Ubuntu Server), Autodesk Maya (3D varlık modelleme)"),
     ])),
     ("Diller &amp; Sertifikalar",
      "<p>Türkçe (Ana dil) · İngilizce (B2)</p><p><b>Foundational C# with Microsoft</b> — freeCodeCamp (Tem 2026) · <b>C# &amp; Python Intermediate</b> — Sololearn (Oca 2025)</p>"),
